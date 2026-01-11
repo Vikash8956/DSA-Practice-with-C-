@@ -1,21 +1,48 @@
-# include <iostream>
+#include <iostream>
 using namespace std;
-// Method 1
-int marks [5] = {15,20,18,17};
-// Method 2
-int marks [] = {15,20,18,10,17,22,19,14};
-// Method 3 
-int n;
-cout << "Enter size of an array: " << endl;
-cin >> n;
-int a [n];
-cout << "Enter values of an array: ";
-for (int i = 0; i<= n-1; i++)
+
+int main()
 {
-    cin >> a [i];
+    // -------- Method 1: 
+    int marks1[5] = {15, 20, 18, 17, 25};
+
+    cout << "Method 1 Array: ";
+    for (int i = 0; i < 5; i++)
+    {
+        cout << marks1[i] << " ";
+    }
+    cout << endl;
+
+    // -------- Method 2: 
+    int marks2[] = {15, 20, 18, 10, 17, 22, 19, 14};
+    int size2 = sizeof(marks2) / sizeof(marks2[0]);
+
+    cout << "Method 2 Array: ";
+    for (int i = 0; i < size2; i++)
+    {
+        cout << marks2[i] << " ";
+    }
+    cout << endl;
+
+    // Method 3: 
+    int n;
+    cout << "Enter size of array: ";
+    cin >> n;
+
+    int a[100];   // safe fixed size (important)
+
+    cout << "Enter values of array: ";
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+
+    cout << "Method 3 Array: ";
+    for (int i = 0; i < n; i++)
+    {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
 }
-marks [0] = 15;
-marks [1] = 18;
-marks [2] = 14;
-marks [3] = 20;
-marks [4] = 25;
