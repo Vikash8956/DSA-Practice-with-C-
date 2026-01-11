@@ -1,55 +1,59 @@
-# include <iostream>
+#include <iostream>
 using namespace std;
-int Queue [5] , n = 5 , x , front = - 1 , rear = -1;
-void Insert ( )
+
+int Queue[5], n = 5, x, front = -1, rear = -1;
+
+void Insert()
 {
-    if (rear==n-1)
+    if (rear == n - 1)
     {
-        cout <<"Queue is full";
+        cout << "Queue is full" << endl;
     }
     else
     {
-        if (front==-1)
-        {
+        if (front == -1)
             front = 0;
-        }
+
         cout << "Insert the element in Queue: ";
         cin >> x;
         rear++;
-        Queue [rear] = x;
+        Queue[rear] = x;
     }
 }
-void Delete ()
+
+void DeleteElement()   // ✅ function name changed
 {
-    if (front==-1)
+    if (front == -1)
     {
-        cout << "Queue is empty" <<endl;
+        cout << "Queue is empty" << endl;
     }
     else
     {
-        cout << "Element deleted from queue is: " << Queue[front] <<endl;
-        if (front==rear)
+        cout << "Element deleted from queue is: " << Queue[front] << endl;
+
+        if (front == rear)
         {
             front = -1;
             rear = -1;
         }
         else
         {
-            front ++;
+            front++;
         }
     }
 }
+
 int main()
 {
-    Insert ();
     Insert();
     Insert();
     Insert();
     Insert();
     Insert();
-    delete();
-    delete();
+    Insert();      // Queue full case
 
+    DeleteElement();
+    DeleteElement();
 
-
+    return 0;
 }
